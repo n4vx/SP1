@@ -1,0 +1,5 @@
+# Progress Log
+
+## Iteration 1
+- Starting PRD-driven execution
+- Two stories: backtest script (US-001) and website (US-002)

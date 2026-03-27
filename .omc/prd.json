@@ -1,0 +1,34 @@
+{
+  "title": "Largest Market Cap Strategy - Backtest & Dashboard",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Python Backtest Script",
+      "priority": 1,
+      "passes": true,
+      "acceptanceCriteria": [
+        "Script runs end-to-end without errors: python3 backtest.py",
+        "Uses yfinance to pull historical price data for top market cap companies and SPY",
+        "Implements strategy: hold #1 market cap company, switch to new #1 at next trading day open",
+        "Outputs total return, CAGR, Sharpe ratio, and max drawdown for both strategy and SPY",
+        "Generates a comparison chart saved as PNG showing strategy vs SPY cumulative returns",
+        "Covers at least 10 years of history (2014-2024+)"
+      ]
+    },
+    {
+      "id": "US-002",
+      "title": "Next.js Dashboard Website",
+      "priority": 2,
+      "passes": true,
+      "acceptanceCriteria": [
+        "Next.js project created in /Users/nicoparadigm/Desktop/SP1/web with working dev server",
+        "Homepage displays current #1 US company by market cap (name + ticker + market cap)",
+        "Homepage displays #2 company and the gap (both % and $ difference)",
+        "Uses free public data source (Yahoo Finance API or similar) via API route",
+        "Clean, minimal, professional design",
+        "Builds successfully with next build (ready for Vercel deploy)",
+        "vercel.json or similar config present if needed"
+      ]
+    }
+  ]
+}
