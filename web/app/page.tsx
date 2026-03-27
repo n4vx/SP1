@@ -156,12 +156,75 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Backtest Results */}
+      <div className="w-full max-w-md mt-16">
+        <h2 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-4 text-center">
+          Backtest — 2012 to Present
+        </h2>
+
+        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          {/* CAGR comparison */}
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="text-center">
+              <div className="text-xs font-mono text-zinc-500 mb-1">#1 Market Cap</div>
+              <div className="text-3xl font-bold text-emerald-400">17.6%</div>
+              <div className="text-xs text-zinc-500">CAGR</div>
+            </div>
+            <div className="text-center">
+              <div className="text-xs font-mono text-zinc-500 mb-1">S&P 500</div>
+              <div className="text-3xl font-bold text-zinc-400">14.2%</div>
+              <div className="text-xs text-zinc-500">CAGR</div>
+            </div>
+          </div>
+
+          {/* Outperformance badge */}
+          <div className="text-center mb-6">
+            <span className="inline-block bg-emerald-400/10 text-emerald-400 text-sm font-mono px-3 py-1 rounded-full">
+              +3.4%/yr outperformance
+            </span>
+          </div>
+
+          {/* Stats table */}
+          <div className="border-t border-zinc-800 pt-4 space-y-3">
+            {[
+              { label: "Total Return", strat: "805%", spy: "475%" },
+              { label: "Sharpe Ratio", strat: "0.56", spy: "0.60" },
+              { label: "Max Drawdown", strat: "-35.1%", spy: "-33.7%" },
+              { label: "Volatility", strat: "28.3%", spy: "17.9%" },
+              { label: "Switches", strat: "15", spy: "—" },
+            ].map((row) => (
+              <div key={row.label} className="flex items-center justify-between text-sm">
+                <span className="text-zinc-500">{row.label}</span>
+                <div className="flex gap-6 font-mono">
+                  <span className="text-zinc-200 w-16 text-right">{row.strat}</span>
+                  <span className="text-zinc-500 w-16 text-right">{row.spy}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Holdings timeline */}
+          <div className="border-t border-zinc-800 pt-4 mt-4">
+            <div className="text-xs font-mono text-zinc-500 mb-2">Holdings Over Time</div>
+            <div className="flex h-3 rounded-full overflow-hidden">
+              <div className="bg-blue-500" style={{ width: "55%" }} title="AAPL" />
+              <div className="bg-emerald-500" style={{ width: "25%" }} title="MSFT" />
+              <div className="bg-purple-500" style={{ width: "12%" }} title="NVDA" />
+              <div className="bg-amber-500" style={{ width: "8%" }} title="XOM" />
+            </div>
+            <div className="flex justify-between mt-2 text-xs text-zinc-600">
+              <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-full bg-blue-500" />AAPL</span>
+              <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-full bg-emerald-500" />MSFT</span>
+              <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-full bg-purple-500" />NVDA</span>
+              <span className="flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-full bg-amber-500" />XOM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Footer */}
       <div className="mt-16 text-center text-xs text-zinc-600">
-        <p>
-          Strategy: full port the #1 company. Historically beats S&amp;P 500 by ~7% CAGR.
-        </p>
-        <p className="mt-1">Data from Yahoo Finance. Not financial advice.</p>
+        <p>Data from Yahoo Finance. Not financial advice.</p>
       </div>
     </main>
   );
