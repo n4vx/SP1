@@ -19,7 +19,7 @@ The strategy has held **AAPL**, **MSFT**, **XOM**, and **NVDA** over the backtes
 
 **`backtest.py`** — Python backtest using Yahoo Finance data. Tracks historical #1 transitions (Apple, Microsoft, Exxon, NVIDIA), simulates the switching strategy, and compares against SPY. Outputs stats + chart.
 
-**[Live Dashboard](https://web-gules-three-40.vercel.app)** — Next.js app showing the current #1 company, the gap to #2, and a live top-5 leaderboard. Minimal dark UI, deployed on Vercel.
+**[Live Dashboard](https://sp1-fullport.vercel.app)** — Next.js app showing the current #1 company, the gap to #2, and a live top-5 leaderboard. Minimal dark UI, deployed on Vercel.
 
 ## Run the Backtest
 
